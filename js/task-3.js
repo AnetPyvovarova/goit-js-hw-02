@@ -1,13 +1,11 @@
 function checkForSpam(message) {
-  const forbiddenWords = ("spam", "sale");
-  const messageWords = message.toLowerCase().split(" ");
+  const lowerCaseMessage = message.toLowerCase();
 
-  for (let word of messageWords) {
-    if (forbiddenWords.includes(word)) {
-      return true;
-    }
+  if (lowerCaseMessage.includes("spam") || lowerCaseMessage.includes("sale")) {
+    return true;
+  } else {
+    return false;
   }
-  return false;
 }
 
 console.log(checkForSpam("Latest technology news")); // false
